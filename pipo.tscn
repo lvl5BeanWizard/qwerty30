@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://7pwntgtqgu2i"]
+
+[ext_resource type="Script" path="res://pipo.gd" id="1_s3f2i"]
+[ext_resource type="ArrayMesh" uid="uid://dv3korc02jrri" path="res://Assets/Models/birthday_me.res" id="2_bx1b4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6lkng"]
+size = Vector3(0.290916, 1.89781, 0.51535)
+
+[node name="Pipo" type="CharacterBody3D"]
+script = ExtResource("1_s3f2i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -0.509943, 0)
+mesh = ExtResource("2_bx1b4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.00600889, 0.248921, 0.00599368)
+shape = SubResource("BoxShape3D_6lkng")
+
+[node name="Camera_Controller" type="Node3D" parent="."]
+top_level = true
+
+[node name="Camera_Target" type="Node3D" parent="Camera_Controller"]
+transform = Transform3D(1, 0, 0, 0, 0.981279, 0.19259, 0, -0.19259, 0.981279, 0, 0.972841, 3.68636)
+
+[node name="Camera3D" type="Camera3D" parent="Camera_Controller/Camera_Target"]
+transform = Transform3D(1, 0, 0, 0, 0.999326, -0.0366959, 0, 0.0366959, 0.999326, 0, 0.140928, -0.447108)
+current = true
