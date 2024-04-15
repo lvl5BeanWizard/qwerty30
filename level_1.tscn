@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://boaeqlncfj0cv"]
+[gd_scene load_steps=11 format=3 uid="uid://boaeqlncfj0cv"]
 
-[ext_resource type="PackedScene" uid="uid://du8ijrhj1i0sn" path="res://block.tscn" id="1_wmo5r"]
+[ext_resource type="PackedScene" uid="uid://bdgipnt6xdf0i" path="res://present.tscn" id="1_wwkff"]
+[ext_resource type="PackedScene" uid="uid://bhw0xxekl0m10" path="res://balloon.tscn" id="4_7xsro"]
 [ext_resource type="PackedScene" uid="uid://cpc8btyollhk2" path="res://me_take2.tscn" id="4_j6pt5"]
 [ext_resource type="PackedScene" uid="uid://bojn1epf4ne0c" path="res://coin.tscn" id="5_5u76o"]
 
@@ -50,19 +51,19 @@ shadow_enabled = true
 transform = Transform3D(0.921072, 0.230232, 0.314038, -0.387438, 0.622575, 0.679921, -0.0389727, -0.747926, 0.662637, 0, 5.67476, 4.05556)
 shadow_enabled = true
 
-[node name="Blocks" type="Node3D" parent="."]
+[node name="Presents" type="Node3D" parent="."]
 
-[node name="Block1" parent="Blocks" instance=ExtResource("1_wmo5r")]
-transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 0, 3, 0)
+[node name="Present1" parent="Presents" instance=ExtResource("1_wwkff")]
+transform = Transform3D(0.635185, -0.609056, 0.474964, 0.692105, 0.721796, 0, -0.342827, 0.328725, 0.880005, -0.907264, 3.17579, -0.131699)
 
-[node name="Block2" parent="Blocks" instance=ExtResource("1_wmo5r")]
-transform = Transform3D(0.34369, -0.19843, -0.917879, 0.5, 0.866025, 0, 0.794907, -0.45894, 0.39686, 0.856682, 4.259, 0.741007)
+[node name="Present2" parent="Presents" instance=ExtResource("1_wwkff")]
+transform = Transform3D(0.750532, 0.367423, -0.549274, -0.610299, 0.704168, -0.362882, 0.25345, 0.607576, 0.752738, -0.76182, 5.92965, 0.813051)
 
-[node name="Block3" parent="Blocks" instance=ExtResource("1_wmo5r")]
-transform = Transform3D(0.134147, -0.07745, -0.98793, 0.5, 0.866025, 0, 0.855573, -0.493965, 0.1549, 0.119037, 4.8647, -0.713054)
+[node name="Present3" parent="Presents" instance=ExtResource("1_wwkff")]
+transform = Transform3D(0.937555, 0.319507, -0.137497, -0.216499, 0.845411, 0.488271, 0.272248, -0.428013, 0.861792, 0.257119, 3.1597, 1.01972)
 
-[node name="Block4" parent="Blocks" instance=ExtResource("1_wmo5r")]
-transform = Transform3D(-0.732075, 0.422664, -0.534249, 0.5, 0.866026, 0, 0.462673, -0.267125, -0.845327, -0.480326, 6.12369, 0.24807)
+[node name="Present4" parent="Presents" instance=ExtResource("1_wwkff")]
+transform = Transform3D(-0.434958, 0.267907, -0.859673, -0.862258, 0.151181, 0.48338, 0.259466, 0.95151, 0.165247, -0.0211868, 4.65999, 0.225317)
 
 [node name="Coin" parent="." instance=ExtResource("5_5u76o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.738749, 2.45164)
@@ -72,3 +73,12 @@ environment = SubResource("Environment_47ume")
 
 [node name="happy_idle2" parent="." instance=ExtResource("4_j6pt5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.39623, -0.184601, 3.01348)
+
+[node name="Balloon1" parent="." instance=ExtResource("4_7xsro")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12253, 0.645258, -2.69051)
+
+[node name="Balloon3" parent="." instance=ExtResource("4_7xsro")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.48918, 0.784215, -6.71845)
+
+[node name="Balloon2" parent="." instance=ExtResource("4_7xsro")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.71779, 2.3905, 0.70791)
