@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://fpki8tawkxnh"]
+
+[ext_resource type="ArrayMesh" uid="uid://c02m4mku65tqr" path="res://Assets/Models/rampPlatform.res" id="1_plkqa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qer0o"]
+size = Vector3(4.57278, 0.0849305, 2.49329)
+
+[node name="Node3D" type="RigidBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.38968, -3.32486e-09, 0, 2.08913e-07, -0.0380319, 0, 0, 0, 1.25611, 0, 0.633571, 0)
+mesh = ExtResource("1_plkqa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0937195, 0.629227, 6.10352e-05)
+shape = SubResource("BoxShape3D_qer0o")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.918522, -0.395369, 0, 0.395369, 0.918522, 0, 0, 0, 1, -4.47071, -0.275691, 6.10352e-05)
+shape = SubResource("BoxShape3D_qer0o")

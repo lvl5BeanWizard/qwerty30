@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cleogm2yv5jpw"]
+
+[ext_resource type="ArrayMesh" uid="uid://l0njpm552g58" path="res://Assets/Models/cake.res" id="1_yfxxr"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cswg2"]
+height = 1.11624
+radius = 1.96236
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_afutb"]
+height = 0.832684
+radius = 1.74297
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_trhu2"]
+height = 0.698203
+radius = 1.06271
+
+[node name="Node3D" type="RigidBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.38968, 4.92027e-08, 2.17852e-07, -2.08913e-07, 0.562812, -2.17852e-07, -2.08912e-07, 4.92026e-08, 2.49194, 0, 0.633571, 0)
+mesh = ExtResource("1_yfxxr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.215, 0, 0, 0, 1, 0, 0, 0, 1.215, -0.0109711, 0.634046, 6.10352e-05)
+shape = SubResource("CylinderShape3D_cswg2")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59562, 0)
+shape = SubResource("CylinderShape3D_afutb")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.36202, 0)
+shape = SubResource("CylinderShape3D_trhu2")

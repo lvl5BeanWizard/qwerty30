@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://buqjy6jcxhusf"]
+
+[ext_resource type="ArrayMesh" uid="uid://gthbvsosndlc" path="res://Assets/Models/liquorCart.res" id="1_55p04"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mr0cv"]
+size = Vector3(6.61607, 3.71024, 2.52008)
+
+[node name="liquorCart" type="RigidBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0587282, 0, 0, 0, 0.0142293, -0.0584619, 0, 0.148894, 0.00558702, 0, 0.291607, 0)
+mesh = ExtResource("1_55p04")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.231394, 0, 0, 0, 0.231394, 0, 0, 0, 0.231394, -0.286387, 0.45274, -0.0932301)
+shape = SubResource("BoxShape3D_mr0cv")

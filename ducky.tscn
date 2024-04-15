@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgljcvasoo0yg"]
+
+[ext_resource type="ArrayMesh" uid="uid://bot14bxgt0n64" path="res://Assets/Models/ducky.res" id="1_g7ni2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qer0o"]
+size = Vector3(1.82503, 1.10557, 2.45501)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p0p8x"]
+size = Vector3(0.953857, 1.24707, 1.04117)
+
+[node name="Node3D" type="RigidBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.577298, -5.04691e-08, 5.0469e-08, -5.04691e-08, 0.577298, 5.0469e-08, -5.0469e-08, 5.0469e-08, -0.577298, 0, 0.633571, 0)
+mesh = ExtResource("1_g7ni2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0214895, 0.636584, 0.180779)
+shape = SubResource("BoxShape3D_qer0o")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0230713, 1.85132, -0.192001)
+shape = SubResource("BoxShape3D_p0p8x")

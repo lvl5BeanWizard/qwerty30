@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhw0xxekl0m10"]
+
+[ext_resource type="Script" path="res://balloon.gd" id="1_bfgh6"]
+[ext_resource type="ArrayMesh" uid="uid://c2i5rscdt2b8b" path="res://Assets/Models/balloon.res" id="1_sqsvm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_886jt"]
+size = Vector3(1, 2.2937, 1)
+
+[node name="Node3D" type="Area3D"]
+transform = Transform3D(0.546671, 0, 0, 0, 0.546671, 0, 0, 0, 0.546671, 0, 0, 0)
+script = ExtResource("1_bfgh6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.79397, 0)
+mesh = ExtResource("1_sqsvm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06848, 0)
+shape = SubResource("BoxShape3D_886jt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
