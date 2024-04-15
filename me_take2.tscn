@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://cpc8btyollhk2"]
+[gd_scene load_steps=51 format=3 uid="uid://cpc8btyollhk2"]
 
 [ext_resource type="Script" path="res://me_take2.gd" id="2_6kubr"]
 [ext_resource type="Texture2D" uid="uid://cjvuwv2x4f8uu" path="res://Assets/Animations/happy_idle_ImphenziaPalette02-Albedo.png" id="2_m02l2"]
@@ -10,7 +10,6 @@
 [ext_resource type="Animation" uid="uid://d33nhcg82rf53" path="res://Assets/Animations/Imports/strafe_left.res" id="10_yvrl6"]
 [ext_resource type="Animation" uid="uid://bbto4umd7dov3" path="res://Assets/Animations/Imports/idle.res" id="11_54437"]
 [ext_resource type="Animation" uid="uid://b8ov55x78y3ov" path="res://Assets/Animations/Imports/strafe_right.res" id="11_fssbn"]
-[ext_resource type="Animation" uid="uid://3ootnglyrvsc" path="res://Assets/Animations/Imports/dance.res" id="11_wf02s"]
 [ext_resource type="Animation" uid="uid://bn7dcjiel8sag" path="res://Assets/Animations/Imports/walk_backwards.res" id="12_c5bl6"]
 [ext_resource type="PackedScene" uid="uid://n8hnu0v2no4l" path="res://pause_menu.tscn" id="13_k64dx"]
 
@@ -144,7 +143,6 @@ size = Vector3(0.487524, 1.78471, 0.467878)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_v2cfn"]
 _data = {
-"dance": ExtResource("11_wf02s"),
 "idle": ExtResource("11_54437"),
 "jump": ExtResource("9_xyyrq"),
 "run": ExtResource("8_pp73w"),
