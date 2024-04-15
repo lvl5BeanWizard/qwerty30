@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cykytudy0q015"]
+
+[ext_resource type="PackedScene" uid="uid://bygss4tdo7nwj" path="res://Assets/Models/octane_-_rocket_league_car.glb" id="1_l7qqd"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_l7qqd")]
+transform = Transform3D(0.0289805, 0, 0, 0, 0.0289805, 0, 0, 0, 0.0289805, 0, 0, 0)

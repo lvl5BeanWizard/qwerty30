@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://boaeqlncfj0cv"]
+[gd_scene load_steps=16 format=3 uid="uid://boaeqlncfj0cv"]
 
 [ext_resource type="PackedScene" uid="uid://bdgipnt6xdf0i" path="res://present.tscn" id="1_wwkff"]
 [ext_resource type="PackedScene" uid="uid://bhw0xxekl0m10" path="res://balloon.tscn" id="4_7xsro"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cleogm2yv5jpw" path="res://cake.tscn" id="6_i5pwk"]
 [ext_resource type="PackedScene" uid="uid://cgljcvasoo0yg" path="res://ducky.tscn" id="7_4223l"]
 [ext_resource type="PackedScene" uid="uid://buqjy6jcxhusf" path="res://liquorCart.tscn" id="8_2jaey"]
+[ext_resource type="PackedScene" uid="uid://cykytudy0q015" path="res://octane.tscn" id="9_iuuu0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obtu6"]
 albedo_color = Color(0.0313726, 0.301961, 0.0980392, 1)
@@ -101,3 +102,6 @@ transform = Transform3D(0.878767, 0, 0.477251, 0, 1, 0, -0.477251, 0, 0.878767, 
 
 [node name="liquorCart" parent="." instance=ExtResource("8_2jaey")]
 transform = Transform3D(-0.55467, 0, -0.83207, 0, 1, 0, 0.83207, 0, -0.55467, -4.19327, -0.219637, 5.24339)
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("9_iuuu0")]
+transform = Transform3D(0.021906, 0, 0.0189736, 0, 0.0289805, 0, -0.0189736, 0, 0.021906, -2.57255, -0.213453, 15.1067)
