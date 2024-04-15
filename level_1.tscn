@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://boaeqlncfj0cv"]
+[gd_scene load_steps=14 format=3 uid="uid://boaeqlncfj0cv"]
 
 [ext_resource type="PackedScene" uid="uid://bdgipnt6xdf0i" path="res://present.tscn" id="1_wwkff"]
 [ext_resource type="PackedScene" uid="uid://bhw0xxekl0m10" path="res://balloon.tscn" id="4_7xsro"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bojn1epf4ne0c" path="res://coin.tscn" id="5_5u76o"]
 [ext_resource type="PackedScene" uid="uid://dj7eaiq1a6s8p" path="res://table.tscn" id="5_cbrpb"]
 [ext_resource type="PackedScene" uid="uid://cleogm2yv5jpw" path="res://cake.tscn" id="6_i5pwk"]
+[ext_resource type="PackedScene" uid="uid://bqwawac4e853m" path="res://ducky.tscn" id="7_4223l"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obtu6"]
 albedo_color = Color(0.0313726, 0.301961, 0.0980392, 1)
@@ -94,3 +95,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.151194, -0.212502, 0.54044
 
 [node name="Node3D" parent="." instance=ExtResource("6_i5pwk")]
 transform = Transform3D(0.55374, 0, -0.832689, 0, 1, 0, 0.832689, 0, 0.55374, 13.4796, -0.219636, 7.13218)
+
+[node name="Node3D2" parent="." instance=ExtResource("7_4223l")]
+transform = Transform3D(-0.131501, 0, -0.323121, 0, 0.348855, 0, 0.323121, 0, -0.131501, 9.40552, -0.26622, 14.6399)
