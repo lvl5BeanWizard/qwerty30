@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://boaeqlncfj0cv"]
+[gd_scene load_steps=15 format=3 uid="uid://boaeqlncfj0cv"]
 
 [ext_resource type="PackedScene" uid="uid://bdgipnt6xdf0i" path="res://present.tscn" id="1_wwkff"]
 [ext_resource type="PackedScene" uid="uid://bhw0xxekl0m10" path="res://balloon.tscn" id="4_7xsro"]
@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bojn1epf4ne0c" path="res://coin.tscn" id="5_5u76o"]
 [ext_resource type="PackedScene" uid="uid://dj7eaiq1a6s8p" path="res://table.tscn" id="5_cbrpb"]
 [ext_resource type="PackedScene" uid="uid://cleogm2yv5jpw" path="res://cake.tscn" id="6_i5pwk"]
-[ext_resource type="PackedScene" uid="uid://bqwawac4e853m" path="res://ducky.tscn" id="7_4223l"]
+[ext_resource type="PackedScene" uid="uid://cgljcvasoo0yg" path="res://ducky.tscn" id="7_4223l"]
+[ext_resource type="PackedScene" uid="uid://buqjy6jcxhusf" path="res://liquorCart.tscn" id="8_2jaey"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obtu6"]
 albedo_color = Color(0.0313726, 0.301961, 0.0980392, 1)
@@ -48,12 +49,11 @@ mesh = SubResource("BoxMesh_244gm")
 shape = SubResource("BoxShape3D_p7ovc")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.649732, -0.668093, 0.36263, -0.741752, -0.452849, 0.494704, -0.166292, -0.590406, -0.789789, 3.78179, 1.3232, -3.32365)
+transform = Transform3D(0.649732, -0.668093, 0.36263, -0.741752, -0.452849, 0.494704, -0.166292, -0.590406, -0.78979, 25.7818, 1.3232, -3.32365)
 shadow_enabled = true
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.921072, 0.230232, 0.314038, -0.387438, 0.622575, 0.679921, -0.0389727, -0.747926, 0.662637, 0, 5.67476, 4.05556)
-shadow_enabled = true
 
 [node name="Presents" type="Node3D" parent="."]
 
@@ -79,13 +79,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.826, 0.738749, 6.76699)
 environment = SubResource("Environment_47ume")
 
 [node name="happy_idle2" parent="." instance=ExtResource("4_j6pt5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.95019, -0.25325, 13.8624)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98061, -0.253249, 11.1362)
 
 [node name="Balloon1" parent="." instance=ExtResource("4_7xsro")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.52486, 0.0663366, 11.5012)
 
 [node name="Balloon3" parent="." instance=ExtResource("4_7xsro")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3942, 3.36428, 11.6803)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4578, 3.36428, 10.6001)
 
 [node name="Balloon2" parent="." instance=ExtResource("4_7xsro")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.71779, 3.7794, 0.70791)
@@ -93,8 +93,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.71779, 3.7794, 0.70791)
 [node name="Table" parent="." instance=ExtResource("5_cbrpb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.151194, -0.212502, 0.540447)
 
-[node name="Node3D" parent="." instance=ExtResource("6_i5pwk")]
+[node name="Cake" parent="." instance=ExtResource("6_i5pwk")]
 transform = Transform3D(0.55374, 0, -0.832689, 0, 1, 0, 0.832689, 0, 0.55374, 13.4796, -0.219636, 7.13218)
 
-[node name="Node3D2" parent="." instance=ExtResource("7_4223l")]
-transform = Transform3D(-0.131501, 0, -0.323121, 0, 0.348855, 0, 0.323121, 0, -0.131501, 9.40552, -0.26622, 14.6399)
+[node name="Node3D" parent="." instance=ExtResource("7_4223l")]
+transform = Transform3D(0.878767, 0, 0.477251, 0, 1, 0, -0.477251, 0, 0.878767, 9.71587, -0.219637, 13.8269)
+
+[node name="liquorCart" parent="." instance=ExtResource("8_2jaey")]
+transform = Transform3D(-0.55467, 0, -0.83207, 0, 1, 0, 0.83207, 0, -0.55467, -4.19327, -0.219637, 5.24339)
