@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://boaeqlncfj0cv"]
+[gd_scene load_steps=20 format=3 uid="uid://boaeqlncfj0cv"]
 
 [ext_resource type="PackedScene" uid="uid://bdgipnt6xdf0i" path="res://present.tscn" id="1_wwkff"]
 [ext_resource type="PackedScene" uid="uid://c36egbn2vvw40" path="res://presentBlue.tscn" id="2_oknmd"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://buqjy6jcxhusf" path="res://liquorCart.tscn" id="8_2jaey"]
 [ext_resource type="PackedScene" uid="uid://cykytudy0q015" path="res://octane.tscn" id="9_iuuu0"]
 [ext_resource type="PackedScene" uid="uid://ca6l2woj8qdl8" path="res://coffeeCup.tscn" id="12_1xslq"]
+[ext_resource type="AudioStream" uid="uid://cbe5xfvaxd5x1" path="res://Assets/Music/BirthdaySong.mp3" id="13_wg58n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obtu6"]
 albedo_color = Color(0.0313726, 0.301961, 0.0980392, 1)
@@ -129,3 +130,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7, 1.2, 8)
 
 [node name="CoffeCup4" parent="." instance=ExtResource("12_1xslq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1, 0, 14.6)
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("13_wg58n")
+autoplay = true
