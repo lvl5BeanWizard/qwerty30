@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://boaeqlncfj0cv"]
+[gd_scene load_steps=30 format=3 uid="uid://boaeqlncfj0cv"]
 
 [ext_resource type="Texture2D" uid="uid://dg6t0k6o6l7h3" path="res://Assets/2D/AdobeStock_141464997_Preview.jpeg" id="1_6ska6"]
 [ext_resource type="PackedScene" uid="uid://bdgipnt6xdf0i" path="res://present.tscn" id="1_wwkff"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://dbunm3agiubxg" path="res://dice_green.tscn" id="16_xewny"]
 [ext_resource type="PackedScene" uid="uid://br0uwds8dq05x" path="res://dice_red.tscn" id="17_jivd1"]
 [ext_resource type="PackedScene" uid="uid://bcgwk2a2yghc7" path="res://dice_yellow.tscn" id="18_ut1ea"]
+[ext_resource type="PackedScene" uid="uid://jdel22h6ks28" path="res://drawbridge.tscn" id="21_il1w6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w5aww"]
 sky_top_color = Color(0.137255, 0.470588, 0.0823529, 1)
@@ -131,16 +132,6 @@ mesh = SubResource("BoxMesh_244gm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floors/Floor4"]
 shape = SubResource("BoxShape3D_p7ovc")
 
-[node name="Floor5" type="StaticBody3D" parent="Floors"]
-transform = Transform3D(0.616627, 0, 0, 0, 0.0828621, 0, 0, 0, 0.91514, 34.5302, 2.18977, -3.22312)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floors/Floor5"]
-mesh = SubResource("BoxMesh_244gm")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floors/Floor5"]
-shape = SubResource("BoxShape3D_p7ovc")
-
 [node name="Floor2" type="StaticBody3D" parent="Floors"]
 transform = Transform3D(0.943215, -0.0314338, 0, 0.252734, 0.117313, 0, 0, 0, 0.575222, 21.7713, 0.932721, 7.54682)
 metadata/_edit_group_ = true
@@ -234,16 +225,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.71779, 3.7794, 0.70791)
 [node name="Dice" type="Node3D" parent="."]
 
 [node name="dice_blue" parent="Dice" instance=ExtResource("15_icyie")]
-transform = Transform3D(0.112933, 0, -0.217609, 0, 0.245168, 0, 0.217609, 0, 0.112933, 37.0365, 3.0373, 8.77084)
+transform = Transform3D(0.112933, 0, -0.217609, 0, 0.245168, 0, 0.217609, 0, 0.112933, 37.0365, 2.98217, 8.77084)
 
 [node name="dice_green" parent="Dice" instance=ExtResource("16_xewny")]
-transform = Transform3D(0.198078, 0, 0.109401, 0, 0.245209, 0, -0.0622941, 0, 0.347863, 37.8087, 3.04259, 6.15208)
+transform = Transform3D(0.198078, 0, 0.109401, 0, 0.245209, 0, -0.0622941, 0, 0.347863, 37.8087, 2.98746, 6.15208)
 
 [node name="dice_red" parent="Dice" instance=ExtResource("17_jivd1")]
-transform = Transform3D(0.0592882, 0, -0.237934, 0, 0.245209, 0, 0.237934, 0, 0.0592882, 38.9248, 3.04586, 8.39787)
+transform = Transform3D(0.0592882, 0, -0.237934, 0, 0.245209, 0, 0.237934, 0, 0.0592882, 38.9248, 2.99073, 8.39787)
 
 [node name="dice_yellow" parent="Dice" instance=ExtResource("18_ut1ea")]
-transform = Transform3D(0.22964, 0, 0.0859822, 0, 0.245209, 0, -0.0859822, 0, 0.22964, 38.8216, 3.04204, 10.601)
+transform = Transform3D(0.22964, 0, 0.0859822, 0, 0.245209, 0, -0.0859822, 0, 0.22964, 38.8216, 2.98691, 10.601)
 
 [node name="Monkeys" type="Node3D" parent="."]
 
@@ -282,3 +273,6 @@ WASD - Move
 Space - Jump
 Mouse - Look around
 Escape - Pause"
+
+[node name="drawbridge" parent="." instance=ExtResource("21_il1w6")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 35.2663, 3.31139, 0.782433)

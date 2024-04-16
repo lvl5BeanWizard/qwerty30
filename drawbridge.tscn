@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://jdel22h6ks28"]
+
+[ext_resource type="ArrayMesh" uid="uid://k58ntlup13vv" path="res://Assets/Models/drawbridge.res" id="1_wirkq"]
+[ext_resource type="Texture2D" uid="uid://bqi2swruty0nr" path="res://Assets/2D/balloonx2.png" id="2_qkkbk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mr0cv"]
+size = Vector3(29.6195, 42.8581, 2.92545)
+
+[sub_resource type="BoxMesh" id="BoxMesh_csbeg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vi4vh"]
+albedo_texture = ExtResource("2_qkkbk")
+uv1_scale = Vector3(2.3, 2, 1)
+uv1_offset = Vector3(-0.43, -0.07, 0)
+
+[node name="drawbridge" type="RigidBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.40019, 0, 0, 0, 0.000558041, -1.57922, 0, 0.31046, 0.00283893, 0, 0.291607, 0)
+mesh = ExtResource("1_wirkq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.231394, 0, 0, 0, 0.231394, 0, 0, 0, 0.231394, -0.0493326, 3.64818, -0.013033)
+shape = SubResource("BoxShape3D_mr0cv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.73459, 0, 0, 0, 2.7509, 0, 0, 0, 0.121052, -0.0401573, 3.16113, -0.268311)
+mesh = SubResource("BoxMesh_csbeg")
+surface_material_override/0 = SubResource("StandardMaterial3D_vi4vh")
