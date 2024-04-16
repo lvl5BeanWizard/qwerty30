@@ -3,7 +3,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bgo23ec32k5td" path="res://Assets/Models/dice_red.res" id="1_5bs4b"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bgd8r"]
-size = Vector3(4.4986, 0.568848, 2.40248)
+size = Vector3(4.4986, 0.509033, 2.40248)
 
 [node name="Node3D" type="StaticBody3D"]
 
@@ -12,5 +12,5 @@ transform = Transform3D(0.709539, 0, 0, 0, 0.0202272, 0, 0, 0, 0.709539, 0, 0, 0
 mesh = ExtResource("1_5bs4b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52261, 0.215576, -0.47448)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52261, 0.245483, -0.47448)
 shape = SubResource("BoxShape3D_bgd8r")
