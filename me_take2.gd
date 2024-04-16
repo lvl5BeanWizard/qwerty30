@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @onready var pause_menu = $PauseMenu
+@onready var BGM = AudioServer.get_bus_index("Master")
 var SPEED = 5
 const JUMP_VELOCITY = 5
 var paused = false
@@ -11,6 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var lookat
 
 func _ready():
+	$"../Sounds/PartyHorn".play()
 	if !paused:
 		lookat = get_tree().get_nodes_in_group("CameraController")[0].get_node("LookAt")
 		Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
@@ -20,11 +22,17 @@ func _ready():
 func _pauseMenu():
 	if paused:
 		pause_menu.hide()
+		$"../Sounds/AirHorn".play()
+		AudioServer.set_bus_mute(2,false)
+		AudioServer.set_bus_volume_db(BGM, 0)
 		PhysicsServer3D.set_active(true)
+		
 		#Engine.time_scale = 1
 		Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	else:
 		pause_menu.show()
+		AudioServer.set_bus_mute(2,true)
+		$"../Sounds/WiiSad".play()
 		PhysicsServer3D.set_active(false)
 		#Engine.time_scale = 0
 		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
