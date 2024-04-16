@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctm4j8y7auald"]
+
+[ext_resource type="ArrayMesh" uid="uid://x16qqyishty2" path="res://Assets/Models/dice_blue.res" id="1_8i5vb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bgd8r"]
+size = Vector3(4.4986, 0.568848, 2.40248)
+
+[node name="Node3D" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.709539, 0, 0, 0, 0.0202272, 0, 0, 0, 0.709539, 0, 0, 0)
+mesh = ExtResource("1_8i5vb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52261, 0.215576, -0.47448)
+shape = SubResource("BoxShape3D_bgd8r")
