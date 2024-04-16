@@ -13,7 +13,7 @@ var lookat
 func _ready():
 	if !paused:
 		lookat = get_tree().get_nodes_in_group("CameraController")[0].get_node("LookAt")
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 
@@ -57,14 +57,15 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
+	if !paused:
+		$AnimationTree.set("parameters/conditions/walk", input_dir.y == -1 && is_on_floor() )
+		$AnimationTree.set("parameters/conditions/walk_back", input_dir.y == 1 && is_on_floor() )
+		$AnimationTree.set("parameters/conditions/strafe_right", input_dir.x == 1 && is_on_floor() )
+		$AnimationTree.set("parameters/conditions/left", input_dir.x == -1 && is_on_floor() )
 	
-	$AnimationTree.set("parameters/conditions/walk", input_dir.y == -1 && is_on_floor() )
-	$AnimationTree.set("parameters/conditions/walk_back", input_dir.y == 1 && is_on_floor() )
-	$AnimationTree.set("parameters/conditions/jump", !Input.is_action_just_pressed("ui_accept") &&!is_on_floor())
-	$AnimationTree.set("parameters/conditions/strafe_right", input_dir.x == 1 && is_on_floor() )
-	$AnimationTree.set("parameters/conditions/left", input_dir.x == -1 && is_on_floor() )
 	$AnimationTree.set("parameters/conditions/idle", input_dir == Vector2.ZERO )
-
+	$AnimationTree.set("parameters/conditions/jump", !Input.is_action_just_pressed("ui_accept") &&!is_on_floor())
+	
 	#somehow ~~broke~~ fixed strafe_left. No idea how/why
 	
 	#debuggy stuffs
