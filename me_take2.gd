@@ -57,15 +57,14 @@ func _physics_process(delta):
 	$AnimationTree.set("parameters/conditions/idle", input_dir == Vector2.ZERO )
 	$AnimationTree.set("parameters/conditions/walk", input_dir.y == -1 && is_on_floor() )
 	$AnimationTree.set("parameters/conditions/walk_back", input_dir.y == 1 && is_on_floor() )
+	$AnimationTree.set("parameters/conditions/jump", !Input.is_action_just_pressed("ui_accept") &&!is_on_floor())
 	$AnimationTree.set("parameters/conditions/strafe_right", input_dir.x == 1 && is_on_floor() )
 	$AnimationTree.set("parameters/conditions/strafe_left", input_dir.x == -1 && is_on_floor() )
-	$AnimationTree.set("parameters/conditions/jump", !Input.is_action_just_pressed("ui_accept") &&!is_on_floor())
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		$AnimationTree.set("parameters/conditions/jump", true)
-		
 
 	move_and_slide()
 	
