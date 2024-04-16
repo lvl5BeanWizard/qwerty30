@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://boaeqlncfj0cv"]
+[gd_scene load_steps=19 format=3 uid="uid://boaeqlncfj0cv"]
 
 [ext_resource type="PackedScene" uid="uid://bdgipnt6xdf0i" path="res://present.tscn" id="1_wwkff"]
 [ext_resource type="PackedScene" uid="uid://c36egbn2vvw40" path="res://presentBlue.tscn" id="2_oknmd"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cgljcvasoo0yg" path="res://ducky.tscn" id="7_4223l"]
 [ext_resource type="PackedScene" uid="uid://buqjy6jcxhusf" path="res://liquorCart.tscn" id="8_2jaey"]
 [ext_resource type="PackedScene" uid="uid://cykytudy0q015" path="res://octane.tscn" id="9_iuuu0"]
+[ext_resource type="PackedScene" uid="uid://ca6l2woj8qdl8" path="res://coffeeCup.tscn" id="12_1xslq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obtu6"]
 albedo_color = Color(0.0313726, 0.301961, 0.0980392, 1)
@@ -103,7 +104,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.71779, 3.7794, 0.70791)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.151194, -0.212502, 0.540447)
 
 [node name="Cake" parent="." instance=ExtResource("6_i5pwk")]
-transform = Transform3D(0.55374, 0, -0.832689, 0, 1, 0, 0.832689, 0, 0.55374, 13.4796, -0.219636, 7.13218)
+transform = Transform3D(0.55374, 0, -0.832689, 0, 1, 0, 0.832689, 0, 0.55374, 13.4796, 0.180364, 7.13218)
 
 [node name="Node3D" parent="." instance=ExtResource("7_4223l")]
 transform = Transform3D(0.878767, 0, 0.477251, 0, 1, 0, -0.477251, 0, 0.878767, 9.71587, -0.219637, 13.8269)
@@ -113,3 +114,18 @@ transform = Transform3D(-0.55467, 0, -0.83207, 0, 1, 0, 0.83207, 0, -0.55467, -4
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("9_iuuu0")]
 transform = Transform3D(0.021906, 0, 0.0189736, 0, 0.0289805, 0, -0.0189736, 0, 0.021906, -2.57255, -0.213453, 15.1067)
+
+[node name="CoffeeCup1" parent="." instance=ExtResource("12_1xslq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.62851, 0.889748, 4.87826)
+
+[node name="CoffeeCup3" parent="." instance=ExtResource("12_1xslq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.25288, -0.0102525, 16.3461)
+
+[node name="CoffeeCup2" parent="." instance=ExtResource("12_1xslq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22851, 0.989748, 0.978263)
+
+[node name="CoffeCup3" parent="." instance=ExtResource("12_1xslq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7, 1.2, 8)
+
+[node name="CoffeCup4" parent="." instance=ExtResource("12_1xslq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1, 0, 14.6)
