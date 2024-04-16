@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhw0xxekl0m10"]
+[gd_scene load_steps=5 format=3 uid="uid://bhw0xxekl0m10"]
 
 [ext_resource type="Script" path="res://balloon.gd" id="1_bfgh6"]
 [ext_resource type="ArrayMesh" uid="uid://c2i5rscdt2b8b" path="res://Assets/Models/balloon.res" id="1_sqsvm"]
+[ext_resource type="AudioStream" uid="uid://bxpwmyhn81io8" path="res://Assets/Music/BalloonPop.mp3" id="3_7763v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_886jt"]
 size = Vector3(1, 2.2937, 1)
@@ -17,5 +18,10 @@ mesh = ExtResource("1_sqsvm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06848, 0)
 shape = SubResource("BoxShape3D_886jt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7763v")
+volume_db = -5.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

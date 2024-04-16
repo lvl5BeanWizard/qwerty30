@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://boaeqlncfj0cv"]
+[gd_scene load_steps=32 format=3 uid="uid://boaeqlncfj0cv"]
 
 [ext_resource type="Texture2D" uid="uid://dg6t0k6o6l7h3" path="res://Assets/2D/AdobeStock_141464997_Preview.jpeg" id="1_6ska6"]
 [ext_resource type="PackedScene" uid="uid://bdgipnt6xdf0i" path="res://present.tscn" id="1_wwkff"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cgljcvasoo0yg" path="res://ducky.tscn" id="7_4223l"]
 [ext_resource type="PackedScene" uid="uid://buqjy6jcxhusf" path="res://liquorCart.tscn" id="8_2jaey"]
 [ext_resource type="PackedScene" uid="uid://cykytudy0q015" path="res://octane.tscn" id="9_iuuu0"]
-[ext_resource type="PackedScene" path="res://coffeeCup.tscn" id="12_1xslq"]
+[ext_resource type="PackedScene" uid="uid://ca6l2woj8qdl8" path="res://coffeeCup.tscn" id="12_1xslq"]
 [ext_resource type="AudioStream" uid="uid://cbe5xfvaxd5x1" path="res://Assets/Music/BirthdaySong.mp3" id="13_wg58n"]
 [ext_resource type="PackedScene" uid="uid://bxuocowwxgu50" path="res://armadillo.tscn" id="14_5vr3n"]
 [ext_resource type="PackedScene" uid="uid://d3n2fsyhclcjq" path="res://dancing_monkey.tscn" id="14_70dek"]
@@ -20,6 +20,9 @@
 [ext_resource type="PackedScene" uid="uid://dbunm3agiubxg" path="res://dice_green.tscn" id="16_xewny"]
 [ext_resource type="PackedScene" uid="uid://br0uwds8dq05x" path="res://dice_red.tscn" id="17_jivd1"]
 [ext_resource type="PackedScene" uid="uid://bcgwk2a2yghc7" path="res://dice_yellow.tscn" id="18_ut1ea"]
+[ext_resource type="AudioStream" uid="uid://dp7sxh7wt2ib5" path="res://Assets/Music/PartyHorn.mp3" id="21_8erx1"]
+[ext_resource type="AudioStream" uid="uid://dafullxhjpsdx" path="res://Assets/Music/WiiSad.mp3" id="22_bie73"]
+[ext_resource type="AudioStream" uid="uid://bo5mfenl5lbp8" path="res://Assets/Music/DJ_Airhorn.mp3" id="23_m4n86"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w5aww"]
 sky_top_color = Color(0.137255, 0.470588, 0.0823529, 1)
@@ -151,11 +154,6 @@ mesh = SubResource("BoxMesh_244gm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floors/Floor2"]
 shape = SubResource("BoxShape3D_p7ovc")
 
-[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
-unique_name_in_owner = true
-stream = ExtResource("13_wg58n")
-autoplay = true
-
 [node name="Ray" parent="." instance=ExtResource("4_j6pt5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98061, -0.207213, 11.1362)
 
@@ -282,3 +280,23 @@ WASD - Move
 Space - Jump
 Mouse - Look around
 Escape - Pause"
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("13_wg58n")
+volume_db = -15.0
+autoplay = true
+bus = &"Music"
+
+[node name="PartyHorn" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("21_8erx1")
+bus = &"SFX"
+
+[node name="WiiSad" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("22_bie73")
+bus = &"SFX"
+
+[node name="AirHorn" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("23_m4n86")
+bus = &"SFX"
