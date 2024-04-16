@@ -55,13 +55,23 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
 	
-	$AnimationTree.set("parameters/conditions/strafe_right", input_dir.x == 1 && is_on_floor() )
-	$AnimationTree.set("parameters/conditions/strafe_left", input_dir.x == -1 && is_on_floor() )
-	$AnimationTree.set("parameters/conditions/idle", input_dir == Vector2.ZERO )
 	$AnimationTree.set("parameters/conditions/walk", input_dir.y == -1 && is_on_floor() )
 	$AnimationTree.set("parameters/conditions/walk_back", input_dir.y == 1 && is_on_floor() )
 	$AnimationTree.set("parameters/conditions/jump", !Input.is_action_just_pressed("ui_accept") &&!is_on_floor())
+	$AnimationTree.set("parameters/conditions/strafe_right", input_dir.x == 1 && is_on_floor() )
+	$AnimationTree.set("parameters/conditions/left", input_dir.x == -1 && is_on_floor() )
+	$AnimationTree.set("parameters/conditions/idle", input_dir == Vector2.ZERO )
 
+	#somehow broke strafe_left. No idea how/why
+	
+	#debuggy stuffs
+	#if $AnimationTree.get("parameters/conditions/strafe_left"):
+		#print(input_dir.x)
+	#if $AnimationTree.get("parameters/conditions/strafe_right"):
+		#print(input_dir.x)
+	#if $AnimationTree.get("parameters/conditions/idle"):
+		#print("idle")
+	
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY

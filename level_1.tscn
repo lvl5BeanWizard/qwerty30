@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cgljcvasoo0yg" path="res://ducky.tscn" id="7_4223l"]
 [ext_resource type="PackedScene" uid="uid://buqjy6jcxhusf" path="res://liquorCart.tscn" id="8_2jaey"]
 [ext_resource type="PackedScene" uid="uid://cykytudy0q015" path="res://octane.tscn" id="9_iuuu0"]
-[ext_resource type="PackedScene" uid="uid://ca6l2woj8qdl8" path="res://coffeeCup.tscn" id="12_1xslq"]
+[ext_resource type="PackedScene" path="res://coffeeCup.tscn" id="12_1xslq"]
 [ext_resource type="AudioStream" uid="uid://cbe5xfvaxd5x1" path="res://Assets/Music/BirthdaySong.mp3" id="13_wg58n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obtu6"]
@@ -129,10 +129,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22851, 0.989748, 0.978263)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7, 1.2, 8)
 
 [node name="CoffeCup4" parent="." instance=ExtResource("12_1xslq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1, 0, 14.6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.66896, 1.32774, 15.0411)
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("13_wg58n")
 autoplay = true
-
