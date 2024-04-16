@@ -16,8 +16,10 @@ func _pauseMenu():
 	if paused:
 		pause_menu.hide()
 		Engine.time_scale = 1
+		%MusicPlayer.stream_paused = false;
 	else:
 		pause_menu.show()
 		Engine.time_scale = 0
+		%MusicPlayer.stream_paused = true;
 		
 	paused = !paused
