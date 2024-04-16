@@ -9,6 +9,7 @@ size = Vector3(1.82503, 1.10557, 2.45501)
 size = Vector3(0.953857, 1.24707, 1.04117)
 
 [node name="Node3D" type="RigidBody3D"]
+process_mode = 3
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.577298, -5.04691e-08, 5.0469e-08, -5.04691e-08, 0.577298, 5.0469e-08, -5.0469e-08, 5.0469e-08, -0.577298, 0, 0.633571, 0)

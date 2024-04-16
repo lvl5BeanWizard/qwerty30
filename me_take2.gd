@@ -1,9 +1,10 @@
 extends CharacterBody3D
 
 @onready var pause_menu = $PauseMenu
-const SPEED = 5
+var SPEED = 5
 const JUMP_VELOCITY = 5
 var paused = false
+var running = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -19,11 +20,13 @@ func _ready():
 func _pauseMenu():
 	if paused:
 		pause_menu.hide()
-		Engine.time_scale = 1
+		PhysicsServer3D.set_active(true)
+		#Engine.time_scale = 1
 		Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 	else:
 		pause_menu.show()
-		Engine.time_scale = 0
+		PhysicsServer3D.set_active(false)
+		#Engine.time_scale = 0
 		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
 		
 	paused = !paused
@@ -62,7 +65,7 @@ func _physics_process(delta):
 	$AnimationTree.set("parameters/conditions/left", input_dir.x == -1 && is_on_floor() )
 	$AnimationTree.set("parameters/conditions/idle", input_dir == Vector2.ZERO )
 
-	#somehow broke strafe_left. No idea how/why
+	#somehow ~~broke~~ fixed strafe_left. No idea how/why
 	
 	#debuggy stuffs
 	#if $AnimationTree.get("parameters/conditions/strafe_left"):
@@ -76,8 +79,15 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		$AnimationTree.set("parameters/conditions/jump", true)
+		
+	if Input.is_action_pressed("run"):
+		SPEED = 8
+	else:
+		SPEED = 5
+		
 
-	move_and_slide()
+	if !paused:
+		move_and_slide()
 	
 	#Make camera controller match position of myself
 	$Camera_Controller.position = lerp($Camera_Controller.position, position, .15)
