@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cscie63hxeri5"]
+
+[ext_resource type="ArrayMesh" uid="uid://b0ocgbp12so17" path="res://Assets/Models/presentGreen.res" id="1_y7mxc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3kpb4"]
+size = Vector3(0.845764, 0.842407, 0.842407)
+
+[node name="Block" type="RigidBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.420822, 0, 0, 0, 0.420822, 0, 0, 0, 0.420822, 0, -0.0648032, 0)
+mesh = ExtResource("1_y7mxc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.15527e-05, -0.0646362, 0.00177002)
+shape = SubResource("BoxShape3D_3kpb4")
