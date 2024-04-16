@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca6l2woj8qdl8"]
+
+[ext_resource type="ArrayMesh" uid="uid://bqmbskvrrr2yp" path="res://Assets/Models/CoffeeCup.res" id="1_2r348"]
+[ext_resource type="Script" path="res://coffeeCup.gd" id="1_cs78x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3kpb4"]
+size = Vector3(0.102665, 0.111526, 0.158574)
+
+[node name="Block" type="RigidBody3D"]
+script = ExtResource("1_cs78x")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0645467, 0, 0, 0, 0.0700217, 0, 0, 0, 0.0702459, 0, -0.0648032, 0)
+mesh = ExtResource("1_2r348")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.26903, 0, 0, 0, 1.26903, 0, 0, 0, 1.26903, 0.000591107, -0.0651165, -0.0293347)
+shape = SubResource("BoxShape3D_3kpb4")
