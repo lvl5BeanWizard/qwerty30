@@ -11,8 +11,13 @@ config_version=5
 [application]
 
 config/name="Qwerty30"
+run/main_scene="res://menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="Qwerty30"
 
 [filesystem]
 
