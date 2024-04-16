@@ -88,7 +88,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.826, 0.738749, 6.76699)
 environment = SubResource("Environment_47ume")
 
 [node name="happy_idle2" parent="." instance=ExtResource("4_j6pt5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98061, 0.357897, 11.1362)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98061, -0.207213, 11.1362)
 
 [node name="Balloon1" parent="." instance=ExtResource("4_7xsro")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.88592, 0.0663366, 7.795)
