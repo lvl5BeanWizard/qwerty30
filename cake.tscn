@@ -15,12 +15,17 @@ height = 0.698203
 radius = 1.06271
 
 [node name="Node3D" type="RigidBody3D"]
+process_mode = 3
+process_priority = 1
+process_physics_priority = 1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(2.38968, 4.92027e-08, 2.17852e-07, -2.08913e-07, 0.562812, -2.17852e-07, -2.08912e-07, 4.92026e-08, 2.49194, 0, 0.633571, 0)
 mesh = ExtResource("1_yfxxr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+process_mode = 3
+process_priority = 1
 transform = Transform3D(1.215, 0, 0, 0, 1, 0, 0, 0, 1.215, -0.0109711, 0.634046, 6.10352e-05)
 shape = SubResource("CylinderShape3D_cswg2")
 

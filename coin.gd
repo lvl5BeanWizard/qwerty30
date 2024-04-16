@@ -1,6 +1,6 @@
 extends Area3D
 
-const ROT_SPEED = 2
+const ROT_SPEED = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
