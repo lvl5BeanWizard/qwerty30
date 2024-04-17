@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://boaeqlncfj0cv"]
+[gd_scene load_steps=36 format=3 uid="uid://boaeqlncfj0cv"]
 
 [ext_resource type="Texture2D" uid="uid://dg6t0k6o6l7h3" path="res://Assets/2D/AdobeStock_141464997_Preview.jpeg" id="1_6ska6"]
 [ext_resource type="PackedScene" uid="uid://bdgipnt6xdf0i" path="res://present.tscn" id="1_wwkff"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cb0j0u7xanals" path="res://Assets/2D/bold_and_brash.png" id="2_r61e8"]
 [ext_resource type="PackedScene" uid="uid://cscie63hxeri5" path="res://presentGreen.tscn" id="3_1xaef"]
 [ext_resource type="PackedScene" uid="uid://bhw0xxekl0m10" path="res://balloon.tscn" id="4_7xsro"]
+[ext_resource type="Texture2D" uid="uid://claa3vahgjlg4" path="res://Assets/2D/teh_void poster.png" id="4_cb1ds"]
 [ext_resource type="PackedScene" uid="uid://cpc8btyollhk2" path="res://me_take2.tscn" id="4_j6pt5"]
 [ext_resource type="PackedScene" uid="uid://dj7eaiq1a6s8p" path="res://table.tscn" id="5_cbrpb"]
 [ext_resource type="PackedScene" uid="uid://cleogm2yv5jpw" path="res://cake.tscn" id="6_i5pwk"]
@@ -60,6 +61,12 @@ uv1_scale = Vector3(3, 2, 0)
 
 [sub_resource type="BoxMesh" id="BoxMesh_oy188"]
 material = SubResource("StandardMaterial3D_alm1a")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ty5sv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mis4n"]
+albedo_texture = ExtResource("4_cb1ds")
+uv1_scale = Vector3(3, 2, 1)
 
 [node name="Level1" type="Node3D"]
 
@@ -118,7 +125,7 @@ mesh = SubResource("BoxMesh_244gm")
 shape = SubResource("BoxShape3D_p7ovc")
 
 [node name="Art1" type="StaticBody3D" parent="Floors"]
-transform = Transform3D(-3.18655e-16, -9.91013e-10, -0.164801, -0.194062, -9.91013e-10, 0, -8.48272e-09, 0.0226717, -7.20368e-09, 34.4463, 5.51129, 14.6112)
+transform = Transform3D(-3.18655e-16, -9.91013e-10, -0.164801, -0.194062, -9.91013e-10, 0, -8.48272e-09, 0.0226717, -7.20368e-09, 35.501, 5.51129, 14.6112)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floors/Art1"]
@@ -147,6 +154,13 @@ shape = SubResource("BoxShape3D_p7ovc")
 
 [node name="drawbridge" parent="Floors" instance=ExtResource("21_il1w6")]
 transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 33.8151, 3.57122, 1.00174)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floors"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floors/StaticBody3D"]
+transform = Transform3D(2.72937, 0, 0, 0, 4.20299, 0, 0, 0, 0.0800604, 36.9719, 5.97602, 15.111)
+mesh = SubResource("BoxMesh_ty5sv")
+surface_material_override/0 = SubResource("StandardMaterial3D_mis4n")
 
 [node name="Ray" parent="." instance=ExtResource("4_j6pt5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98061, -0.207213, 11.1362)
