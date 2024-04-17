@@ -16,5 +16,5 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		var tempRot = rotation.x - event.relative.y / 1000 * sensitivity
 		rotation.y -= event.relative.x / 1000 * sensitivity
-		tempRot = clamp(tempRot, -1, 0.5)
+		tempRot = clamp(tempRot, -1, .6)
 		rotation.x = tempRot

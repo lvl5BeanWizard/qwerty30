@@ -20,10 +20,10 @@
 [ext_resource type="PackedScene" uid="uid://dbunm3agiubxg" path="res://dice_green.tscn" id="16_xewny"]
 [ext_resource type="PackedScene" uid="uid://br0uwds8dq05x" path="res://dice_red.tscn" id="17_jivd1"]
 [ext_resource type="PackedScene" uid="uid://bcgwk2a2yghc7" path="res://dice_yellow.tscn" id="18_ut1ea"]
-[ext_resource type="AudioStream" uid="uid://dp7sxh7wt2ib5" path="res://Assets/Music/PartyHorn.mp3" id="21_8erx1"]
+[ext_resource type="AudioStream" path="res://Assets/Music/PartyHorn.mp3" id="21_8erx1"]
 [ext_resource type="PackedScene" uid="uid://jdel22h6ks28" path="res://drawbridge.tscn" id="21_il1w6"]
-[ext_resource type="AudioStream" uid="uid://dafullxhjpsdx" path="res://Assets/Music/WiiSad.mp3" id="22_bie73"]
-[ext_resource type="AudioStream" uid="uid://bo5mfenl5lbp8" path="res://Assets/Music/DJ_Airhorn.mp3" id="23_m4n86"]
+[ext_resource type="AudioStream" path="res://Assets/Music/WiiSad.mp3" id="22_bie73"]
+[ext_resource type="AudioStream" path="res://Assets/Music/DJ_Airhorn.mp3" id="23_m4n86"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w5aww"]
 sky_top_color = Color(0.137255, 0.470588, 0.0823529, 1)
