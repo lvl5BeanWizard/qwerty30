@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://jdel22h6ks28"]
+[gd_scene load_steps=10 format=3 uid="uid://jdel22h6ks28"]
 
+[ext_resource type="Script" path="res://drawbridge.gd" id="1_1vdqd"]
 [ext_resource type="ArrayMesh" uid="uid://k58ntlup13vv" path="res://Assets/Models/drawbridge.res" id="1_wirkq"]
 [ext_resource type="Texture2D" uid="uid://bqi2swruty0nr" path="res://Assets/2D/balloonx2.png" id="2_qkkbk"]
+[ext_resource type="AudioStream" uid="uid://bx6stsonlsm1c" path="res://Assets/Music/gate-heavy-openclose-wav-103288-AudioTrimmer.com.mp3" id="4_u66wd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mr0cv"]
-size = Vector3(29.6195, 42.8581, 2.92545)
+size = Vector3(29.6195, 42.8581, 3.29134)
 
 [sub_resource type="BoxMesh" id="BoxMesh_csbeg"]
 
@@ -13,17 +15,44 @@ albedo_texture = ExtResource("2_qkkbk")
 uv1_scale = Vector3(2.3, 2, 1)
 uv1_offset = Vector3(-0.43, -0.07, 0)
 
+[sub_resource type="Animation" id="Animation_aw12h"]
+resource_name = "fall"
+length = 2.0
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.1, 1, 0, 1, 0, 4.37114e-08, 1.5, 1, 5.33851e-08, -0.707107, 0.707107, -5.33851e-08)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ixi1"]
+_data = {
+"fall": SubResource("Animation_aw12h")
+}
+
 [node name="drawbridge" type="RigidBody3D"]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0, 0)
+script = ExtResource("1_1vdqd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(3.40019, 0, 0, 0, 0.000558041, -1.57922, 0, 0.31046, 0.00283893, 0, 0.291607, 0)
 mesh = ExtResource("1_wirkq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.231394, 0, 0, 0, 0.231394, 0, 0, 0, 0.231394, -0.0493326, 3.64818, -0.013033)
+transform = Transform3D(0.231394, 0, 0, 0, 0.231394, 0, 0, 0, 0.231394, -0.0493326, 3.64818, -0.0553652)
 shape = SubResource("BoxShape3D_mr0cv")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(3.73459, 0, 0, 0, 2.7509, 0, 0, 0, 0.121052, -0.0401573, 3.16113, -0.268311)
+transform = Transform3D(3.73459, 0, 0, 0, 2.7509, 0, 0, 0, 0.134552, -0.0401573, 3.16113, -0.270936)
 mesh = SubResource("BoxMesh_csbeg")
 surface_material_override/0 = SubResource("StandardMaterial3D_vi4vh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5ixi1")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_u66wd")
+pitch_scale = 1.15

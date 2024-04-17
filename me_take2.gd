@@ -1,18 +1,23 @@
 extends CharacterBody3D
-
+@onready var drawbridge = $"../Floors/drawbridge"
 @onready var pause_menu = $PauseMenu
 @onready var BGM = AudioServer.get_bus_index("Master")
 var SPEED = 5
 const JUMP_VELOCITY = 5
 var paused = false
 var running = false
+var balloons = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var lookat
 
+func _collectBalloon():
+	balloons += 1
+	if balloons == 2:
+		drawbridge._open()
+
 func _ready():
-	$"../Sounds/PartyHorn".play()
 	if !paused:
 		lookat = get_tree().get_nodes_in_group("CameraController")[0].get_node("LookAt")
 		Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
@@ -22,7 +27,7 @@ func _ready():
 func _pauseMenu():
 	if paused:
 		pause_menu.hide()
-		$"../Sounds/AirHorn".play()
+		$"../Sounds/PartyHorn".play()
 		AudioServer.set_bus_mute(2,false)
 		AudioServer.set_bus_volume_db(BGM, 0)
 		PhysicsServer3D.set_active(true)
@@ -90,7 +95,7 @@ func _physics_process(delta):
 		$AnimationTree.set("parameters/conditions/jump", true)
 		
 	if Input.is_action_pressed("run"):
-		SPEED = 8
+		SPEED = 10
 	else:
 		SPEED = 5
 		

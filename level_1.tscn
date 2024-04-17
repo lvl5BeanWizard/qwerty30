@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://boaeqlncfj0cv"]
+[gd_scene load_steps=33 format=3 uid="uid://boaeqlncfj0cv"]
 
 [ext_resource type="Texture2D" uid="uid://dg6t0k6o6l7h3" path="res://Assets/2D/AdobeStock_141464997_Preview.jpeg" id="1_6ska6"]
 [ext_resource type="PackedScene" uid="uid://bdgipnt6xdf0i" path="res://present.tscn" id="1_wwkff"]
@@ -21,9 +21,9 @@
 [ext_resource type="PackedScene" uid="uid://br0uwds8dq05x" path="res://dice_red.tscn" id="17_jivd1"]
 [ext_resource type="PackedScene" uid="uid://bcgwk2a2yghc7" path="res://dice_yellow.tscn" id="18_ut1ea"]
 [ext_resource type="AudioStream" uid="uid://dp7sxh7wt2ib5" path="res://Assets/Music/PartyHorn.mp3" id="21_8erx1"]
+[ext_resource type="PackedScene" uid="uid://jdel22h6ks28" path="res://drawbridge.tscn" id="21_il1w6"]
 [ext_resource type="AudioStream" uid="uid://dafullxhjpsdx" path="res://Assets/Music/WiiSad.mp3" id="22_bie73"]
 [ext_resource type="AudioStream" uid="uid://bo5mfenl5lbp8" path="res://Assets/Music/DJ_Airhorn.mp3" id="23_m4n86"]
-[ext_resource type="PackedScene" uid="uid://jdel22h6ks28" path="res://drawbridge.tscn" id="21_il1w6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w5aww"]
 sky_top_color = Color(0.137255, 0.470588, 0.0823529, 1)
@@ -145,6 +145,9 @@ mesh = SubResource("BoxMesh_244gm")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floors/Floor2"]
 shape = SubResource("BoxShape3D_p7ovc")
 
+[node name="drawbridge" parent="Floors" instance=ExtResource("21_il1w6")]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 33.8151, 3.57122, 1.00174)
+
 [node name="Ray" parent="." instance=ExtResource("4_j6pt5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98061, -0.207213, 11.1362)
 
@@ -152,6 +155,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98061, -0.207213, 11.1362)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.4205, 2.51381, -18.075)
 
 [node name="Presents" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13701, 0)
 
 [node name="Present2" parent="Presents" instance=ExtResource("1_wwkff")]
 transform = Transform3D(0.750532, 0.367423, -0.549274, -0.610299, 0.704168, -0.362882, 0.25345, 0.607576, 0.752738, -0.76182, 5.92965, 0.813051)
@@ -159,11 +163,14 @@ transform = Transform3D(0.750532, 0.367423, -0.549274, -0.610299, 0.704168, -0.3
 [node name="Present10" parent="Presents" instance=ExtResource("1_wwkff")]
 transform = Transform3D(0.12393, -0.367574, -0.9217, -0.610299, 0.704168, -0.362882, 0.782417, 0.607484, -0.137063, -1.11536, 8.92731, 1.698)
 
+[node name="Present11" parent="Presents" instance=ExtResource("1_wwkff")]
+transform = Transform3D(0.860359, 0.500658, 0.0955114, -0.477656, 0.726622, 0.493828, 0.177838, -0.470492, 0.864299, 0.008811, 9.94448, 0.66771)
+
 [node name="Present7" parent="Presents" instance=ExtResource("1_wwkff")]
-transform = Transform3D(-0.545026, -0.835337, -0.0718272, -0.755566, 0.526495, -0.389774, 0.363409, -0.158167, -0.918105, 0.518553, 7.66429, 1.62428)
+transform = Transform3D(0.478123, -0.188846, 0.85775, 0.380676, 0.924669, -0.00861644, -0.791507, 0.330645, 0.513994, 0.518553, 7.66429, 1.62428)
 
 [node name="Present3" parent="Presents" instance=ExtResource("1_wwkff")]
-transform = Transform3D(0.937555, 0.319507, -0.137497, -0.216499, 0.845411, 0.488271, 0.272248, -0.428013, 0.861792, 0.356807, 3.1597, 1.01972)
+transform = Transform3D(0.937555, 0.319507, -0.137497, -0.216499, 0.845411, 0.488271, 0.272248, -0.428013, 0.861792, 1.26167, 3.1597, 0.761871)
 
 [node name="Present4" parent="Presents" instance=ExtResource("1_wwkff")]
 transform = Transform3D(-0.434958, 0.267907, -0.859673, -0.862258, 0.151181, 0.48338, 0.259466, 0.95151, 0.165247, -0.0211868, 4.65999, 0.225317)
@@ -172,7 +179,7 @@ transform = Transform3D(-0.434958, 0.267907, -0.859673, -0.862258, 0.151181, 0.4
 transform = Transform3D(0.834165, -0.551515, 0, 0.551515, 0.834165, 0, 0, 0, 1, 0, 8.19143, 0)
 
 [node name="Present6" parent="Presents" instance=ExtResource("2_oknmd")]
-transform = Transform3D(0.717044, 0.435729, -0.544048, 0.0112546, 0.773186, 0.63408, 0.696937, -0.460786, 0.549504, 1.49278, 6.28009, 1.58256)
+transform = Transform3D(0.717044, 0.435729, -0.544048, 0.0112546, 0.773186, 0.63408, 0.696937, -0.460786, 0.549504, 0.519907, 6.28009, 1.58256)
 
 [node name="Present5" parent="Presents" instance=ExtResource("3_1xaef")]
 transform = Transform3D(0.759028, 0.562779, 0.327347, -0.40602, 0.802212, -0.437725, -0.508944, 0.199336, 0.837401, -0.813668, 3.19901, 0)
@@ -180,14 +187,17 @@ transform = Transform3D(0.759028, 0.562779, 0.327347, -0.40602, 0.802212, -0.437
 [node name="Present8" parent="Presents" instance=ExtResource("3_1xaef")]
 transform = Transform3D(0.41631, -0.431162, 0.800491, 0.719388, 0.694608, 0, -0.556027, 0.575864, 0.599345, -1.26841, 7.26608, 1.50926)
 
+[node name="Present12" parent="Presents" instance=ExtResource("3_1xaef")]
+transform = Transform3D(0.626901, -0.649266, -0.430637, 0.719388, 0.694608, 0, 0.299124, -0.309795, 0.902525, -1.26841, 10.6644, 0.550331)
+
 [node name="Present9" parent="Presents" instance=ExtResource("3_1xaef")]
-transform = Transform3D(-0.24505, 0.253792, 0.935703, -0.235349, 0.920689, -0.311355, -0.940511, -0.296514, -0.165885, -1.26841, 2.65772, 1.50926)
+transform = Transform3D(-0.24505, 0.253792, 0.935703, -0.235349, 0.920689, -0.311355, -0.940511, -0.296514, -0.165885, -1.76832, 2.65772, 2.32619)
 
 [node name="Block" parent="Presents" instance=ExtResource("2_oknmd")]
 transform = Transform3D(1, 0, 0, 0, 0.856763, 0.515711, 0, -0.515711, 0.856763, -1.56131, 5.15817, 1.62018)
 
 [node name="Block3" parent="Presents" instance=ExtResource("2_oknmd")]
-transform = Transform3D(-0.509642, -0.443711, 0.737147, 0, 0.856763, 0.515711, -0.860386, 0.262828, -0.436643, -0.186046, 3.99013, 1.94088)
+transform = Transform3D(-0.509642, -0.443711, 0.737147, 0, 0.856763, 0.515711, -0.860386, 0.262828, -0.436643, 0.372863, 3.99013, 3.08811)
 
 [node name="Block2" parent="Presents" instance=ExtResource("3_1xaef")]
 transform = Transform3D(0.420903, 0.81839, -0.391251, -0.599419, 0.574663, 0.55719, 0.680836, 0, 0.732436, 1.34658, 6, 0)
@@ -262,7 +272,7 @@ transform = Transform3D(0.9035, 0, -0.428588, 0, 1, 0, 0.428588, 0, 0.9035, 28.5
 [node name="Octane" parent="EnvironmentObjs" instance=ExtResource("9_iuuu0")]
 transform = Transform3D(0.021906, 0, 0.0189736, 0, 0.0289805, 0, -0.0189736, 0, 0.021906, -2.57255, -0.213453, 15.1067)
 
-[node name="Label" type="Label" parent="."]
+[node name="InstructionUI" type="Label" parent="."]
 offset_right = 237.0
 offset_bottom = 82.0
 theme_override_font_sizes/font_size = 30
@@ -291,5 +301,3 @@ bus = &"SFX"
 [node name="AirHorn" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("23_m4n86")
 bus = &"SFX"
-[node name="drawbridge" parent="." instance=ExtResource("21_il1w6")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 35.2663, 3.31139, 0.782433)
