@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://drawbridge.gd" id="1_1vdqd"]
 [ext_resource type="ArrayMesh" uid="uid://k58ntlup13vv" path="res://Assets/Models/drawbridge.res" id="1_wirkq"]
 [ext_resource type="Texture2D" uid="uid://bqi2swruty0nr" path="res://Assets/2D/balloonx2.png" id="2_qkkbk"]
-[ext_resource type="AudioStream" uid="uid://bx6stsonlsm1c" path="res://Assets/Music/gate-heavy-openclose-wav-103288-AudioTrimmer.com.mp3" id="4_u66wd"]
+[ext_resource type="AudioStream" path="res://Assets/Music/gate-heavy-openclose-wav-103288-AudioTrimmer.com.mp3" id="4_u66wd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mr0cv"]
 size = Vector3(29.6195, 42.8581, 3.29134)

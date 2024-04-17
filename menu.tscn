@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_aaarq"]
 [ext_resource type="Texture2D" uid="uid://b4ord06oy5nx5" path="res://Assets/2D/logo_cropped.png" id="2_tafur"]
-[ext_resource type="AudioStream" uid="uid://dha1e1ox4mygk" path="res://DJ_Airhorn.mp3" id="3_xtoex"]
+[ext_resource type="AudioStream" path="res://DJ_Airhorn.mp3" id="3_xtoex"]
 
 [sub_resource type="Theme" id="Theme_qnqmf"]
 default_font_size = 19

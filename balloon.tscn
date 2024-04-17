@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://balloon.gd" id="1_bfgh6"]
 [ext_resource type="ArrayMesh" uid="uid://c2i5rscdt2b8b" path="res://Assets/Models/balloon.res" id="1_sqsvm"]
-[ext_resource type="AudioStream" uid="uid://bxpwmyhn81io8" path="res://Assets/Music/BalloonPop.mp3" id="3_7763v"]
+[ext_resource type="AudioStream" path="res://Assets/Music/BalloonPop.mp3" id="3_7763v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_886jt"]
 size = Vector3(1, 2.2937, 1)
