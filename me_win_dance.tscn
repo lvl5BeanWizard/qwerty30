@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://bx1rcok4gjuef"]
+
+[ext_resource type="PackedScene" uid="uid://d0ayxo1erx80b" path="res://Assets/Animations/Imports/me_win_dance.glb" id="1_y7ocj"]
+
+[node name="me_win_dance" instance=ExtResource("1_y7ocj")]
+
+[node name="Armature" parent="." index="0"]
+transform = Transform3D(-0.9968, 0.0427384, 0.0675569, 0.0350807, 0.993231, -0.110733, -0.0718322, -0.108008, -0.991552, -0.0140483, -0.103491, 0.0678772)
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/rotation = Quaternion(4.37114e-08, 1, 2.18557e-08, 9.79723e-17)
+bones/1/rotation = Quaternion(0.100112, 0.0249392, 0.00937196, 0.994619)
+bones/2/rotation = Quaternion(0.199145, 0.0491388, 0.0186588, 0.978559)
+bones/3/rotation = Quaternion(0.0248882, -0.0204952, 0.0297176, 0.999038)
+bones/5/rotation = Quaternion(-6.98691e-05, 0.00355602, -0.806022, 0.591876)
+bones/6/rotation = Quaternion(0.0849283, 0.0650024, -0.313319, 0.943606)
+bones/7/rotation = Quaternion(0.9175, -0.000301013, -0.00426665, 0.397712)
+bones/8/rotation = Quaternion(-0.201004, 0.247438, -0.0781436, 0.944598)
+bones/10/rotation = Quaternion(-0.019431, -0.0157512, 0.788619, 0.614374)
+bones/11/rotation = Quaternion(0.494515, -0.157892, 0.23989, 0.820352)
+bones/12/rotation = Quaternion(0.817386, 0.000436416, 0.00380126, 0.576078)
+bones/13/rotation = Quaternion(-0.0965288, -0.343487, -0.121967, 0.926187)
+bones/15/rotation = Quaternion(0.0896999, 0.172353, 0.946265, -0.258515)
+bones/15/scale = Vector3(1, 0.999998, 1.00003)
+bones/16/rotation = Quaternion(-0.564324, 0.11264, 0.0265761, 0.817401)
+bones/17/rotation = Quaternion(0.775416, -0.0567666, -0.209219, 0.593073)
+bones/17/scale = Vector3(1, 1.00002, 0.999993)
+bones/19/rotation = Quaternion(6.32389e-05, 0.220512, 0.97197, 0.081545)
+bones/19/scale = Vector3(1, 0.999997, 1.00003)
+bones/20/rotation = Quaternion(-0.637162, -0.10102, -0.018835, 0.763849)
+bones/21/rotation = Quaternion(0.818299, 0.0445485, 0.0936832, 0.565354)
+bones/21/scale = Vector3(1, 1.00002, 0.999993)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "Armature|mixamo_com|Layer0"

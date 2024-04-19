@@ -236,7 +236,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.66896, 1.32774, 15.0411)
 [node name="Balloons" type="Node3D" parent="."]
 
 [node name="Balloon1" parent="Balloons" instance=ExtResource("4_7xsro")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.1499, 2.80949, 12.005)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.1017, 3.7047, 8.05718)
 
 [node name="Balloon3" parent="Balloons" instance=ExtResource("4_7xsro")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.9657, 5.62612, -12.5134)
@@ -259,6 +259,7 @@ transform = Transform3D(0.0592882, 0, -0.237934, 0, 0.245209, 0, 0.237934, 0, 0.
 transform = Transform3D(0.22964, 0, 0.0859822, 0, 0.245209, 0, -0.0859822, 0, 0.22964, 38.8216, 2.98691, 10.601)
 
 [node name="Monkeys" type="Node3D" parent="."]
+transform = Transform3D(0.712614, 0, -0.701556, 0, 1, 0, 0.701556, 0, 0.712614, 4.62775, 9.53674e-07, -4.52017)
 
 [node name="dancing_monkey" parent="Monkeys" instance=ExtResource("14_70dek")]
 transform = Transform3D(0.143541, 0, 0, 0, 0.143541, 0, 0, 0, 0.143541, 7.40792, -0.219637, -0.63018)

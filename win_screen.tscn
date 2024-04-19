@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://g5f1bcdxmvqi"]
+
+[ext_resource type="PackedScene" uid="uid://bx1rcok4gjuef" path="res://me_win_dance.tscn" id="1_hhh3r"]
+
+[node name="WinScreen" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.991866, 0.12729, 0, -0.12729, 0.991866, 0, 1.33677, 2.12712)
+current = true
+
+[node name="me_win_dance" parent="." instance=ExtResource("1_hhh3r")]
+transform = Transform3D(0.884923, 0, -0.465738, 0, 1, 0, 0.465738, 0, 0.884923, 2.21038, -1.19209e-07, -0.146639)
+
+[node name="me_win_dance2" parent="." instance=ExtResource("1_hhh3r")]
+transform = Transform3D(0.839961, 0, 0.542647, 0, 1, 0, -0.542647, 0, 0.839961, -2.20623, -1.19209e-07, -0.146639)
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0, 1, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.5
+offset_top = -195.0
+offset_right = 256.5
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Thanks for coming to 
+my party and playing 
+my silly little game!"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.949008, 0.315252, 0, -0.315252, -0.949008, 0, 3.25574, -4.06669)

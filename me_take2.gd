@@ -16,6 +16,9 @@ func _collectBalloon():
 	balloons += 1
 	if balloons == 2:
 		drawbridge._open()
+		
+	if balloons == 3:
+		get_tree().change_scene_to_file("res://win_screen.tscn")
 
 func _ready():
 	if !paused:
