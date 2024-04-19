@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://g5f1bcdxmvqi"]
+[gd_scene load_steps=4 format=3 uid="uid://g5f1bcdxmvqi"]
 
 [ext_resource type="PackedScene" uid="uid://bx1rcok4gjuef" path="res://me_win_dance.tscn" id="1_hhh3r"]
+[ext_resource type="Script" path="res://win_screen.gd" id="1_s25ou"]
+
+[sub_resource type="Theme" id="Theme_obilo"]
+default_font_size = 19
 
 [node name="WinScreen" type="Node3D"]
+script = ExtResource("1_s25ou")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.991866, 0.12729, 0, -0.12729, 0.991866, 0, 1.33677, 2.12712)
@@ -21,16 +26,56 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -256.5
+offset_left = -256.0
 offset_top = -195.0
-offset_right = 256.5
-offset_bottom = 195.0
+offset_right = 257.0
+offset_bottom = 18.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "Thanks for coming to 
 my party and playing 
-my silly little game!"
+my silly game!
+
+I'm glad you are in my life"
+horizontal_alignment = 1
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.949008, 0.315252, 0, -0.315252, -0.949008, 0, 3.25574, -4.06669)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -214.0
+offset_top = -175.0
+offset_right = 1.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+theme = SubResource("Theme_obilo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
+modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+text = "Play"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+visible = false
+modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+text = "Options"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+modulate = Color(0, 1, 0, 1)
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
