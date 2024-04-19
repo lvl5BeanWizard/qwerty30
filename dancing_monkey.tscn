@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3n2fsyhclcjq"]
+[gd_scene load_steps=4 format=3 uid="uid://d3n2fsyhclcjq"]
 
 [ext_resource type="PackedScene" uid="uid://bbswxlkxk2080" path="res://Assets/dancing_monkey.glb" id="1_uig3e"]
+[ext_resource type="Script" path="res://dancing_monkey.gd" id="2_fef5s"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rdd1t"]
+height = 14.5121
+radius = 11.0809
 
 [node name="dancing_monkey" instance=ExtResource("1_uig3e")]
 transform = Transform3D(0.143541, 0, 0, 0, 0.143541, 0, 0, 0, 0.143541, 0, 0, 0)
+script = ExtResource("2_fef5s")
 
 [node name="Skeleton3D" parent="Armature" index="0"]
 bones/0/position = Vector3(-1.08742, 4.31162, -343.06)
@@ -67,7 +73,6 @@ bones/26/position = Vector3(-6.78953, 21.8367, -3.24249e-05)
 bones/26/rotation = Quaternion(-4.19095e-09, -5.82077e-09, -3.35276e-08, 1)
 bones/27/position = Vector3(-2.65884e-05, 68.1966, 0.549557)
 bones/27/rotation = Quaternion(0.0822524, -0.00135169, -0.0171238, 0.996463)
-bones/27/scale = Vector3(1, 1, 1)
 bones/28/position = Vector3(-1.7924, 60.353, -2.51297e-06)
 bones/28/rotation = Quaternion(0.212712, 0.000930396, -0.0406611, 0.976268)
 bones/29/position = Vector3(0.63781, 36.4793, 4.40657e-05)
@@ -94,3 +99,11 @@ bones/40/position = Vector3(-5.09993e-06, 67.7008, 1.01327e-06)
 
 [node name="AnimationPlayer" parent="." index="1"]
 autoplay = "Armature|mixamo_com|Layer0"
+
+[node name="DanceZone" type="Area3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DanceZone" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.27522, 0)
+shape = SubResource("CylinderShape3D_rdd1t")
+
+[connection signal="body_entered" from="DanceZone" to="." method="_on_dance_zone_body_entered"]
