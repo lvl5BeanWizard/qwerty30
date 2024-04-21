@@ -1,10 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://g5f1bcdxmvqi"]
+[gd_scene load_steps=11 format=3 uid="uid://g5f1bcdxmvqi"]
 
 [ext_resource type="PackedScene" uid="uid://bx1rcok4gjuef" path="res://me_win_dance.tscn" id="1_hhh3r"]
 [ext_resource type="Script" path="res://win_screen.gd" id="1_s25ou"]
+[ext_resource type="Script" path="res://Disco1.gd" id="3_67jiq"]
+[ext_resource type="Script" path="res://Disco2.gd" id="4_hp6yu"]
+[ext_resource type="Script" path="res://Disco3.gd" id="5_iq5ju"]
+[ext_resource type="Texture2D" uid="uid://dg6t0k6o6l7h3" path="res://Assets/2D/AdobeStock_141464997_Preview.jpeg" id="6_287x5"]
 
 [sub_resource type="Theme" id="Theme_obilo"]
 default_font_size = 19
+
+[sub_resource type="BoxMesh" id="BoxMesh_madwo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ef8xn"]
+albedo_texture = ExtResource("6_287x5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2a0nf"]
+albedo_texture = ExtResource("6_287x5")
 
 [node name="WinScreen" type="Node3D"]
 script = ExtResource("1_s25ou")
@@ -14,7 +26,7 @@ transform = Transform3D(1, 0, 0, 0, 0.991866, 0.12729, 0, -0.12729, 0.991866, 0,
 current = true
 
 [node name="me_win_dance" parent="." instance=ExtResource("1_hhh3r")]
-transform = Transform3D(0.884923, 0, -0.465738, 0, 1, 0, 0.465738, 0, 0.884923, 2.21038, -1.19209e-07, -0.146639)
+transform = Transform3D(0.884923, 0, -0.465738, 0, 1, 0, 0.465738, 0, 0.884923, 2.09712, -1.19209e-07, -0.146639)
 
 [node name="me_win_dance2" parent="." instance=ExtResource("1_hhh3r")]
 transform = Transform3D(0.839961, 0, 0.542647, 0, 1, 0, -0.542647, 0, 0.839961, -2.20623, -1.19209e-07, -0.146639)
@@ -26,10 +38,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -256.0
-offset_top = -195.0
-offset_right = 257.0
-offset_bottom = 18.0
+offset_left = -310.0
+offset_top = -389.0
+offset_right = 311.0
+offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
@@ -41,7 +53,22 @@ I'm glad you are in my life"
 horizontal_alignment = 1
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.949008, 0.315252, 0, -0.315252, -0.949008, 0, 3.25574, -4.06669)
+transform = Transform3D(1, 0, 0, 0, -0.949008, 0.315252, 0, -0.315252, -0.949008, 0, -32.6601, -20.7062)
+
+[node name="Disco1" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.0145804, -0.499787, 0.5, 0.025254, 0.865657, 0, -0.999575, 0.0291608, -3.26396, 5.31277, 0.0808494)
+light_color = Color(0, 0.294118, 1, 1)
+script = ExtResource("3_67jiq")
+
+[node name="Disco2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0.0145804, 0.499787, -0.5, 0.025254, 0.865657, 0, -0.999575, 0.0291608, 3.62516, 5.31277, 0.0808494)
+light_color = Color(1, 0, 0.380392, 1)
+script = ExtResource("4_hp6yu")
+
+[node name="Disco3" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.525041, 0.851077, 0, -0.851077, 0.525041, 0.0141301, 4.90852, 3.69031)
+light_color = Color(0.188235, 1, 0.262745, 1)
+script = ExtResource("5_iq5ju")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 7
@@ -61,21 +88,19 @@ theme = SubResource("Theme_obilo")
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
-visible = false
-modulate = Color(0, 1, 0, 1)
-layout_mode = 2
-text = "Play"
-
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
-visible = false
-modulate = Color(0, 1, 0, 1)
-layout_mode = 2
-text = "Options"
-
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 modulate = Color(0, 1, 0, 1)
 layout_mode = 2
 text = "Exit"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(20.5395, 0, 0, 0, 0.0663412, 0, 0, 0, 9.57028, 0, 0, -3.14759)
+mesh = SubResource("BoxMesh_madwo")
+surface_material_override/0 = SubResource("StandardMaterial3D_ef8xn")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(20.5395, 0, 0, 0, -2.89986e-09, 9.57028, 0, -0.0663412, -4.1833e-07, -0.0164862, 3.07195, -3.01621)
+mesh = SubResource("BoxMesh_madwo")
+surface_material_override/0 = SubResource("StandardMaterial3D_2a0nf")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -315,4 +315,5 @@ bus = &"SFX"
 
 [node name="AirHorn" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("23_m4n86")
+volume_db = -10.0
 bus = &"SFX"
