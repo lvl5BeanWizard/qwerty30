@@ -29,7 +29,7 @@ current = true
 transform = Transform3D(0.884923, 0, -0.465738, 0, 1, 0, 0.465738, 0, 0.884923, 2.09712, -1.19209e-07, -0.146639)
 
 [node name="me_win_dance2" parent="." instance=ExtResource("1_hhh3r")]
-transform = Transform3D(0.839961, 0, 0.542647, 0, 1, 0, -0.542647, 0, 0.839961, -2.20623, -1.19209e-07, -0.146639)
+transform = Transform3D(0.839961, 0, 0.542647, 0, 1, 0, -0.542647, 0, 0.839961, -2.19069, -1.19209e-07, -0.146639)
 
 [node name="Label" type="Label" parent="."]
 modulate = Color(0, 1, 0, 1)
@@ -66,7 +66,7 @@ light_color = Color(1, 0, 0.380392, 1)
 script = ExtResource("4_hp6yu")
 
 [node name="Disco3" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.525041, 0.851077, 0, -0.851077, 0.525041, 0.0141301, 4.90852, 3.69031)
+transform = Transform3D(1, 0, 0, 0, 0.525041, 0.851077, 0, -0.851077, 0.525041, 0.0141301, 4.90852, 3.17872)
 light_color = Color(0.188235, 1, 0.262745, 1)
 script = ExtResource("5_iq5ju")
 
