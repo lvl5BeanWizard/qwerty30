@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://boaeqlncfj0cv"]
+[gd_scene load_steps=38 format=3 uid="uid://boaeqlncfj0cv"]
 
 [ext_resource type="Texture2D" uid="uid://dg6t0k6o6l7h3" path="res://Assets/2D/AdobeStock_141464997_Preview.jpeg" id="1_6ska6"]
 [ext_resource type="PackedScene" uid="uid://bdgipnt6xdf0i" path="res://present.tscn" id="1_wwkff"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://jdel22h6ks28" path="res://drawbridge.tscn" id="21_il1w6"]
 [ext_resource type="AudioStream" uid="uid://dafullxhjpsdx" path="res://Assets/Music/WiiSad.mp3" id="22_bie73"]
 [ext_resource type="AudioStream" uid="uid://bo5mfenl5lbp8" path="res://Assets/Music/DJ_Airhorn.mp3" id="23_m4n86"]
+[ext_resource type="PackedScene" uid="uid://cd7w0ee4q8xv7" path="res://Nargacuga.tscn" id="26_61tha"]
+[ext_resource type="PackedScene" uid="uid://bhde45dy8g2sk" path="res://Rathalos.tscn" id="27_0badh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_w5aww"]
 sky_top_color = Color(0.137255, 0.470588, 0.0823529, 1)
@@ -316,3 +318,11 @@ bus = &"SFX"
 [node name="AirHorn" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("23_m4n86")
 bus = &"SFX"
+
+[node name="MH Monsters" type="Node3D" parent="."]
+
+[node name="Nargacuga" parent="MH Monsters" instance=ExtResource("26_61tha")]
+transform = Transform3D(0.519578, 0.105049, -0.847941, -0.0548849, 0.994467, 0.0895711, 0.852659, 3.35276e-08, 0.522469, 40.4024, 2.37537, 7.32798)
+
+[node name="Rathalos" parent="MH Monsters" instance=ExtResource("27_0badh")]
+transform = Transform3D(-0.811003, 0, -0.585043, 0, 1, 0, 0.585043, 0, -0.811003, 30.8853, 8.3259, 6.95731)

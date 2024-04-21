@@ -1,0 +1,57 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://weedpct2sstp"
+path="res://.godot/imported/nargacuga.glb-836eb35b2faeabb85d1b01b6842a87af.scn"
+
+[deps]
+
+source_file="res://Assets/Models/nargacuga.glb"
+dest_files=["res://.godot/imported/nargacuga.glb-836eb35b2faeabb85d1b01b6842a87af.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"meshes": {
+"nargacuga_LODGroup_1_MainMesh_1_SubMesh_1__Eye_mesh0000": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Nargacuga_eyes.res"
+},
+"nargacuga_LODGroup_1_MainMesh_1_SubMesh_2__Body_mesh0001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/make_streamable": "",
+"save_to_file/path": "res://Assets/Models/Nargacuga_body.res"
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

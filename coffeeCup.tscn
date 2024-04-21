@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ca6l2woj8qdl8"]
 
-[ext_resource type="ArrayMesh" uid="uid://bqmbskvrrr2yp" path="res://Assets/Models/CoffeeCup.res" id="1_2r348"]
+[ext_resource type="ArrayMesh" uid="uid://ccbr7t5evk1kb" path="res://Assets/Models/CoffeeCup.res" id="1_2r348"]
 [ext_resource type="Script" path="res://coffeeCup.gd" id="1_cs78x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3kpb4"]
