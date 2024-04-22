@@ -158,7 +158,7 @@ transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 33.815
 [node name="StaticBody3D" type="StaticBody3D" parent="Floors"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floors/StaticBody3D"]
-transform = Transform3D(2.72937, 0, 0, 0, 4.20299, 0, 0, 0, 0.0800604, 36.9719, 5.97602, 15.111)
+transform = Transform3D(2.72937, 0, 0, 0, 4.20299, 0, 0, 0, 0.0307501, 36.9719, 5.97602, 15.111)
 mesh = SubResource("BoxMesh_ty5sv")
 surface_material_override/0 = SubResource("StandardMaterial3D_mis4n")
 
@@ -292,6 +292,7 @@ offset_right = 237.0
 offset_bottom = 82.0
 theme_override_font_sizes/font_size = 30
 text = "Collect all 3 balloons!
+
 WASD - Move
 Space - Jump
 Mouse - Look around
@@ -307,12 +308,15 @@ bus = &"Music"
 
 [node name="PartyHorn" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("21_8erx1")
+volume_db = -10.0
 bus = &"SFX"
 
 [node name="WiiSad" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("22_bie73")
+volume_db = -10.0
 bus = &"SFX"
 
 [node name="AirHorn" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("23_m4n86")
+volume_db = -10.0
 bus = &"SFX"

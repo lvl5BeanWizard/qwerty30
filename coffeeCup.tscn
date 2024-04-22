@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://ca6l2woj8qdl8"]
+[gd_scene load_steps=5 format=3 uid="uid://ca6l2woj8qdl8"]
 
-[ext_resource type="ArrayMesh" uid="uid://bqmbskvrrr2yp" path="res://Assets/Models/CoffeeCup.res" id="1_2r348"]
+[ext_resource type="ArrayMesh" uid="uid://ccbr7t5evk1kb" path="res://Assets/Models/CoffeeCup.res" id="1_2r348"]
 [ext_resource type="Script" path="res://coffeeCup.gd" id="1_cs78x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3kpb4"]
 size = Vector3(0.102665, 0.111526, 0.158574)
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kt8yd"]
+height = 1.81458
+radius = 0.528184
+
 [node name="Block" type="RigidBody3D"]
+transform = Transform3D(1.10027, 0, 0, 0, 1.10027, 0, 0, 0, 1.10027, 0, 0.0999486, 0)
 script = ExtResource("1_cs78x")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -16,3 +21,9 @@ mesh = ExtResource("1_2r348")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.26903, 0, 0, 0, 1.26903, 0, 0, 0, 1.26903, 0.000591107, -0.0651165, -0.0293347)
 shape = SubResource("BoxShape3D_3kpb4")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.229252, 0)
+shape = SubResource("CylinderShape3D_kt8yd")

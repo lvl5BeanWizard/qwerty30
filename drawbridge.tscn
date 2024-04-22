@@ -55,4 +55,5 @@ libraries = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_u66wd")
+volume_db = -10.0
 pitch_scale = 1.15
