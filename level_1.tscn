@@ -73,11 +73,18 @@ uv1_scale = Vector3(3, 2, 1)
 [node name="Environment" type="Node3D" parent="."]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
-transform = Transform3D(0.649732, -0.668093, 0.36263, -0.741752, -0.452849, 0.494704, -0.166292, -0.590406, -0.78979, 25.7818, 1.3232, -3.32365)
+transform = Transform3D(0.548651, -0.83395, 0.0592469, -0.552261, -0.308302, 0.774569, -0.627686, -0.457688, -0.629708, 34.7307, 10.3104, 3.95436)
+shadow_enabled = true
+
+[node name="DirectionalLight3D4" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(0.548651, -0.83395, 0.0592469, -0.552261, -0.308302, 0.774569, -0.627686, -0.457688, -0.629708, 34.7307, 7.78112, -16.2957)
 shadow_enabled = true
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Environment"]
-transform = Transform3D(0.921072, 0.230232, 0.314038, -0.387438, 0.622575, 0.679921, -0.0389727, -0.747926, 0.662637, 0, 5.67476, 4.05556)
+transform = Transform3D(-0.680346, 0.304604, -0.666593, -0.387438, 0.622575, 0.679921, 0.62211, 0.720845, -0.305552, -5.25111, 5.67476, 2.18916)
+
+[node name="DirectionalLight3D3" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(0.693713, -0.288857, 0.659791, -0.387438, 0.622575, 0.679921, -0.607169, -0.727298, 0.319975, 13.3869, 5.67476, 12.725)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
 environment = SubResource("Environment_47ume")
