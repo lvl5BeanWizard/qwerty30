@@ -155,7 +155,7 @@ func _drink():
 	coffee_speed += 1
 	
 func _on_animation_tree_animation_finished(anim_name):
-	if anim_name == "Imports/wave" || anim_name == "Imports/twist" || anim_name == "Imports/white_dance" :
+	if anim_name == "Imports/wave" || anim_name == "Imports/white_dance" || anim_name == "Imports/gagnam" :
 		$AnimationTree.set("parameters/conditions/dance1", false )
 		$AnimationTree.set("parameters/conditions/dance2", false )
 		$AnimationTree.set("parameters/conditions/dance3", false )
