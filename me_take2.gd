@@ -1,19 +1,25 @@
 extends CharacterBody3D
+
 @onready var drawbridge = $"../Floors/drawbridge"
 @onready var pause_menu = $PauseMenu
 @onready var BGM = AudioServer.get_bus_index("Master")
+@onready var camera = $Camera_Controller/Camera_Target/Camera3D
+
 var SPEED = 5
+var coffee_speed = 5
 const JUMP_VELOCITY = 5
 var paused = false
 var running = false
 var balloons = 0
+var isDancing = false
+var canDance = false
+var isDrinking = false
+var canDrink = false
+var dance = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var lookat
-
-func _dance():
-	$AnimationTree.set("parameters/conditions/dance", true )
 
 func _collectBalloon():
 	balloons += 1
@@ -101,10 +107,15 @@ func _physics_process(delta):
 		$AnimationTree.set("parameters/conditions/jump", true)
 		
 	if Input.is_action_pressed("run"):
-		SPEED = 10
+		SPEED = coffee_speed + 10
 	else:
-		SPEED = 5
+		SPEED = coffee_speed
 		
+	if canDance && Input.is_action_just_pressed("ui_interact"):
+		_dance()
+	
+	if canDrink && Input.is_action_just_pressed("ui_interact"):
+		_drink()
 
 	if !paused:
 		move_and_slide()
@@ -112,6 +123,48 @@ func _physics_process(delta):
 	#Make camera controller match position of myself
 	$Camera_Controller.position = lerp($Camera_Controller.position, position, .15)
 
+func _get_is_dancing():
+	return isDancing
+	
+func _set_can_dance(in_canDance):
+	canDance = in_canDance
 
+func _get_is_drinking():
+	return isDrinking
+
+func _set_can_drink(in_canDrink):
+	canDrink = in_canDrink
+
+func _dance():
+	isDancing = true
+	dance += 1
+	if dance == 4:
+		dance = 1
+	
+	match dance:
+		1:
+			$AnimationTree.set("parameters/conditions/dance3", true)
+		2:
+			$AnimationTree.set("parameters/conditions/dance2", true)
+		3:
+			$AnimationTree.set("parameters/conditions/dance1", true)
+		
+func _drink():
+	isDrinking = true
+	$AnimationTree.set("parameters/conditions/drink", true )
+	coffee_speed += 1
+	
+	
 func _on_animation_tree_animation_finished(anim_name):
-	$AnimationTree.set("parameters/conditions/dance", false )
+	if anim_name == "Imports/wave" || anim_name == "Imports/twist" || anim_name == "Imports/white_dance" :
+		$AnimationTree.set("parameters/conditions/dance1", false )
+		$AnimationTree.set("parameters/conditions/dance2", false )
+		$AnimationTree.set("parameters/conditions/dance3", false )
+		isDancing = false
+		canDance = false
+		canDrink = false
+	elif anim_name == "Imports/drink":
+		$AnimationTree.set("parameters/conditions/drink", false )
+		isDrinking = false
+		canDrink = false
+		canDance = false
