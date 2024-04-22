@@ -7,7 +7,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_886jt"]
 size = Vector3(1, 2.2937, 1)
 
-[node name="Node3D" type="Area3D"]
+[node name="Balloon" type="Area3D"]
 transform = Transform3D(0.546671, 0, 0, 0, 0.546671, 0, 0, 0, 0.546671, 0, 0, 0)
 script = ExtResource("1_bfgh6")
 

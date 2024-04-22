@@ -4,21 +4,27 @@ extends RayCast3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	add_exception(owner)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+	#add_exception(owner)
 	pass
-	
-func _physics_process(delta):
+
+
+func _process(delta):
 	prompt.text = ""
 	if is_colliding():
 		var detected = get_collider()
 		if detected.name == "DanceZone":
-			prompt.text = "Press E to Dance"
-			$".."._dance()
-		else:
-			prompt.text = "Press E to Drink"
-			
-		
+			if !$".."._get_is_dancing():
+				prompt.text = "Press E to Dance"
+				$".."._set_can_dance(true)
+				$".."._set_can_drink(false)
+			else:
+				$".."._set_can_dance(false)
+		elif detected.name == "CoffeeZone":
+			if !$".."._get_is_drinking():
+				prompt.text = "Press E to Drink"
+				$".."._set_can_drink(true)
+				$".."._set_can_dance(false)
+			else:
+				$".."._set_can_drink(false)
+				detected.queue_free()
+
