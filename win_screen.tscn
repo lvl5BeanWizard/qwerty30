@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://g5f1bcdxmvqi"]
+[gd_scene load_steps=14 format=3 uid="uid://g5f1bcdxmvqi"]
 
 [ext_resource type="PackedScene" uid="uid://bx1rcok4gjuef" path="res://me_win_dance.tscn" id="1_hhh3r"]
 [ext_resource type="Script" path="res://win_screen.gd" id="1_s25ou"]
@@ -6,14 +6,20 @@
 [ext_resource type="Script" path="res://Disco2.gd" id="4_hp6yu"]
 [ext_resource type="Script" path="res://Disco3.gd" id="5_iq5ju"]
 [ext_resource type="Texture2D" uid="uid://dg6t0k6o6l7h3" path="res://Assets/2D/AdobeStock_141464997_Preview.jpeg" id="6_287x5"]
+[ext_resource type="PackedScene" uid="uid://cleogm2yv5jpw" path="res://cake.tscn" id="7_6mm7d"]
 
 [sub_resource type="Theme" id="Theme_obilo"]
 default_font_size = 19
 
-[sub_resource type="BoxMesh" id="BoxMesh_madwo"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_eqrgo"]
+size = Vector3(97.9313, 1.79968, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ef8xn"]
+[sub_resource type="BoxMesh" id="BoxMesh_nrdtb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekxus"]
 albedo_texture = ExtResource("6_287x5")
+
+[sub_resource type="BoxMesh" id="BoxMesh_madwo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2a0nf"]
 albedo_texture = ExtResource("6_287x5")
@@ -93,14 +99,24 @@ modulate = Color(0, 1, 0, 1)
 layout_mode = 2
 text = "Exit"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="StaticBody3D" parent="."]
 transform = Transform3D(20.5395, 0, 0, 0, 0.0663412, 0, 0, 0, 9.57028, 0, 0, -3.14759)
-mesh = SubResource("BoxMesh_madwo")
-surface_material_override/0 = SubResource("StandardMaterial3D_ef8xn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D"]
+transform = Transform3D(0.013082, 0, 0, 0, 2.63037, 0, 0, 0, 1, 0.039834, -1.76601, 0)
+shape = SubResource("BoxShape3D_eqrgo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1.50787, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_nrdtb")
+surface_material_override/0 = SubResource("StandardMaterial3D_ekxus")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(20.5395, 0, 0, 0, -2.89986e-09, 9.57028, 0, -0.0663412, -4.1833e-07, -0.0164862, 3.07195, -3.01621)
+transform = Transform3D(39.9293, 0, 0, 0, -2.89986e-09, 9.57028, 0, -0.0663412, -4.1833e-07, -0.0164862, 3.07195, -5.68186)
 mesh = SubResource("BoxMesh_madwo")
 surface_material_override/0 = SubResource("StandardMaterial3D_2a0nf")
+
+[node name="Node3D" parent="." instance=ExtResource("7_6mm7d")]
+transform = Transform3D(0.939376, 0, -0.342889, 0, 1, 0, 0.342889, 0, 0.939376, 2.76062, 11.2174, -3.94623)
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

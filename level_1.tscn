@@ -292,6 +292,7 @@ offset_right = 237.0
 offset_bottom = 82.0
 theme_override_font_sizes/font_size = 30
 text = "Collect all 3 balloons!
+
 WASD - Move
 Space - Jump
 Mouse - Look around
@@ -307,10 +308,12 @@ bus = &"Music"
 
 [node name="PartyHorn" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("21_8erx1")
+volume_db = -10.0
 bus = &"SFX"
 
 [node name="WiiSad" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("22_bie73")
+volume_db = -10.0
 bus = &"SFX"
 
 [node name="AirHorn" type="AudioStreamPlayer" parent="Sounds"]

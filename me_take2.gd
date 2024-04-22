@@ -12,6 +12,9 @@ var balloons = 0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var lookat
 
+func _dance():
+	$AnimationTree.set("parameters/conditions/dance", true )
+
 func _collectBalloon():
 	balloons += 1
 	if balloons == 2:
@@ -108,3 +111,7 @@ func _physics_process(delta):
 	
 	#Make camera controller match position of myself
 	$Camera_Controller.position = lerp($Camera_Controller.position, position, .15)
+
+
+func _on_animation_tree_animation_finished(anim_name):
+	$AnimationTree.set("parameters/conditions/dance", false )
