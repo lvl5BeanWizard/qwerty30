@@ -4,7 +4,7 @@ extends CharacterBody3D
 @onready var pause_menu = $PauseMenu
 @onready var BGM = AudioServer.get_bus_index("Master")
 @onready var camera = $Camera_Controller/Camera_Target/Camera3D
-
+@onready var dancecam = $"../DanceCam"
 var SPEED = 5
 var coffee_speed = 5
 const JUMP_VELOCITY = 5
@@ -148,6 +148,8 @@ func _dance():
 			$AnimationTree.set("parameters/conditions/dance2", true)
 		3:
 			$AnimationTree.set("parameters/conditions/dance1", true)
+	camera.current = false
+	dancecam.current = true
 		
 func _drink():
 	isDrinking = true
@@ -159,6 +161,8 @@ func _on_animation_tree_animation_finished(anim_name):
 		$AnimationTree.set("parameters/conditions/dance1", false )
 		$AnimationTree.set("parameters/conditions/dance2", false )
 		$AnimationTree.set("parameters/conditions/dance3", false )
+		dancecam.current = false
+		camera.current = true
 		isDancing = false
 		canDance = false
 		canDrink = false

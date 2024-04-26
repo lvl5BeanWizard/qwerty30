@@ -21,7 +21,7 @@ func _process(delta):
 				$".."._set_can_dance(false)
 		elif detected.name == "CoffeeZone":
 			if !$".."._get_is_drinking():
-				prompt.text = "Press E to Drink"
+				prompt.text = "Press E to Drink Coffee"
 				$".."._set_can_drink(true)
 				$".."._set_can_dance(false)
 			else:

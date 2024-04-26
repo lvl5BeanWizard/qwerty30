@@ -15,7 +15,7 @@ transform = Transform3D(1.10027, 0, 0, 0, 1.10027, 0, 0, 0, 1.10027, 0, 0.099948
 script = ExtResource("1_cs78x")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.0645467, 0, 0, 0, 0.0700217, 0, 0, 0, 0.0702459, 0, -0.0648032, 0)
+transform = Transform3D(0.119701, 0, 0, 0, 0.129855, 0, 0, 0, 0.130271, 0, 0.0402979, 0)
 mesh = ExtResource("1_2r348")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

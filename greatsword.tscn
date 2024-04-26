@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpttofe00n1q6"]
+
+[ext_resource type="PackedScene" uid="uid://sqg7ci233y35" path="res://Assets/Models/monster_hunter_bone_greatsword.glb" id="1_wbtmf"]
+
+[node name="Sketchfab_Scene" instance=ExtResource("1_wbtmf")]
